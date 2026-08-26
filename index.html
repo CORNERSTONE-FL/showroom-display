@@ -2,29 +2,44 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cornerstone Showroom — Setting New Standards</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <title>Cornerstone Brombal Group Showroom — Setting New Standards</title>
         <meta
             name="description"
-            content="South Florida's premier luxury impact windows and doors showroom. Design-forward fenestration solutions for visionary architects and builders."
+            content="Explore Cornerstone's Brombal Group window and door showroom in West Palm Beach, Florida. See full-scale systems, materials, movement, and details in person."
         />
-        <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euEerrbYncNJ5EFb7VdYCL8IZTvUiXSjwmRxtB" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eult56HBbg7gxtT4ZOKn0pAY1jhbBCU8dELGzu" />
-        <link rel="apple-touch-icon" sizes="192x192" href="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euNpcBUwy3KUkV07oTgsxwWAEJzhPIBfrcdLR8" />
-        <link rel="apple-touch-icon" sizes="512x512" href="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euIuSuHDtASzGstywaupdBU9j6NJ85mhqeikFW" />
+        <!-- App identity -->
+        <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+        <link
+            rel="preload"
+            as="image"
+            type="image/webp"
+            href="./assets/showroom-hero-1600.webp"
+            imagesrcset="./assets/showroom-hero-960.webp 960w, ./assets/showroom-hero-1600.webp 1600w, ./assets/showroom-hero-2400.webp 2400w"
+            imagesizes="100vw"
+        />
+        <meta name="theme-color" content="#000000" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Brombal" />
+        <meta name="format-detection" content="telephone=no" />
 
         <!-- Open Graph -->
-        <meta property="og:title" content="Cornerstone Showroom — Setting New Standards" />
-        <meta property="og:description" content="South Florida's premier luxury impact windows and doors showroom. Design-forward fenestration for visionary architects and builders." />
+        <meta property="og:title" content="Cornerstone Brombal Group Showroom — Setting New Standards" />
+        <meta property="og:description" content="Explore Cornerstone's Brombal Group window and door showroom in West Palm Beach, Florida." />
         <meta property="og:image" content="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eurLmVSOeBNAGyWIX9f1MEcuklpnPFRJav4g3o" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.cornerstonecompaniesfl.com" />
+        <meta property="og:url" content="https://showroom.cornerstonecompaniesfl.com" />
+        <link rel="canonical" href="https://showroom.cornerstonecompaniesfl.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cornerstone Showroom — Setting New Standards" />
-        <meta name="twitter:description" content="South Florida's premier luxury impact windows and doors showroom." />
+        <meta name="twitter:title" content="Cornerstone Brombal Group Showroom — Setting New Standards" />
+        <meta name="twitter:description" content="Explore Cornerstone's Brombal Group window and door showroom in West Palm Beach, Florida." />
         <meta name="twitter:image" content="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eurLmVSOeBNAGyWIX9f1MEcuklpnPFRJav4g3o" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,6 +48,7 @@
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Work+Sans:wght@300;400;600;700&display=swap"
             rel="stylesheet"
         />
+        <script>document.documentElement.classList.add("js");</script>
         <style>
             *,
             *::before,
@@ -56,6 +72,7 @@
 
             html {
                 scroll-behavior: smooth;
+                -webkit-text-size-adjust: 100%;
             }
 
             body {
@@ -159,10 +176,10 @@
             }
             @keyframes heroScale {
                 from {
-                    transform: scale(1.04);
+                    transform: translate3d(0, var(--hero-shift, 0px), 0) scale(1.04);
                 }
                 to {
-                    transform: scale(1);
+                    transform: translate3d(0, var(--hero-shift, 0px), 0) scale(1);
                 }
             }
             .hero-overlay {
@@ -672,7 +689,7 @@
             }
             .footer-copy {
                 font-size: 10px;
-                color: rgba(255, 255, 255, 0.25);
+                color: rgba(255, 255, 255, 0.52);
                 letter-spacing: 0.08em;
             }
             .footer-link {
@@ -808,6 +825,1087 @@
                     right: 10px;
                 }
             }
+
+            /* ─── 2026 EDITORIAL REDESIGN ─── */
+            :root {
+                --nav-h: 84px;
+                --page-gutter: clamp(24px, 4.25vw, 68px);
+                --rule: rgba(209, 163, 90, 0.72);
+            }
+
+            body {
+                min-width: 320px;
+                background: var(--cs-black);
+            }
+
+            a,
+            button {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            a:focus-visible,
+            button:focus-visible {
+                outline: 2px solid var(--cs-gold);
+                outline-offset: 4px;
+            }
+
+            nav {
+                top: 0;
+                min-height: calc(var(--nav-h) + env(safe-area-inset-top));
+                height: auto;
+                padding: env(safe-area-inset-top) var(--page-gutter) 0;
+                background: rgba(0, 0, 0, 0.94);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+            }
+
+            nav.scrolled {
+                background: rgba(0, 0, 0, 0.96);
+            }
+
+            .nav-logo {
+                gap: 14px;
+            }
+
+            .nav-logo-mark {
+                width: 34px;
+                height: 34px;
+            }
+
+            .nav-wordmark {
+                font-size: 12px;
+                letter-spacing: 0.28em;
+            }
+
+            .nav-cta {
+                min-height: 44px;
+                padding: 0 20px;
+                border: 1px solid var(--rule);
+                color: var(--cs-gold);
+                font-size: 10px;
+                letter-spacing: 0.16em;
+            }
+
+            .nav-cta-arrow svg {
+                display: block;
+            }
+
+            .nav-cta-label-short {
+                display: none;
+            }
+
+            .hero {
+                min-height: 720px;
+                height: 100svh;
+                padding-top: calc(var(--nav-h) + env(safe-area-inset-top));
+                align-items: stretch;
+            }
+
+            .hero-img {
+                object-position: center 43%;
+                animation-duration: 10s;
+                will-change: transform;
+            }
+
+            .hero-overlay {
+                background:
+                    linear-gradient(90deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.55) 29%, rgba(0, 0, 0, 0.08) 63%, rgba(0, 0, 0, 0.05) 100%),
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 42%);
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                width: min(620px, 56vw);
+                max-width: none;
+                margin: auto 0 64px var(--page-gutter);
+                padding: 78px 0 16px 50px;
+                border-left: 1px solid var(--rule);
+            }
+
+            .hero-content::after {
+                content: "";
+                position: absolute;
+                left: -4px;
+                bottom: 0;
+                width: 7px;
+                height: 7px;
+                background: var(--cs-gold);
+            }
+
+            .hero-heading {
+                margin: 0 0 26px;
+                font-size: clamp(64px, 6.7vw, 104px);
+                line-height: 0.87;
+                letter-spacing: -0.035em;
+                text-wrap: balance;
+            }
+
+            .hero-heading em {
+                display: block;
+                margin-top: 18px;
+            }
+
+            .hero-eyebrow {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                margin: 0 0 22px;
+                color: var(--cs-white);
+                opacity: 0;
+                animation-delay: 0.75s;
+            }
+
+            .hero-eyebrow::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                flex: 0 0 7px;
+                background: var(--cs-gold);
+            }
+
+            .hero-sub {
+                max-width: 480px;
+                margin: 0 0 30px;
+                color: rgba(255, 255, 255, 0.78);
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .hero-link {
+                display: inline-flex;
+                min-height: 48px;
+                align-items: center;
+                gap: 16px;
+                padding: 0 20px;
+                border: 1px solid var(--rule);
+                color: var(--cs-gold);
+                font-size: 10px;
+                font-weight: 600;
+                letter-spacing: 0.17em;
+                text-decoration: none;
+                text-transform: uppercase;
+                opacity: 0;
+                animation: fadeUp 0.9s 1s ease forwards;
+                transition: color 0.25s, background 0.25s;
+            }
+
+            .hero-link:hover {
+                color: var(--cs-black);
+                background: var(--cs-gold);
+            }
+
+            .hero-link svg {
+                transition: transform 0.25s;
+            }
+
+            .hero-link:hover svg {
+                transform: translateX(4px);
+            }
+
+            .hero-scroll-hint {
+                right: var(--page-gutter);
+                bottom: calc(34px + env(safe-area-inset-bottom));
+            }
+
+            .gold-rule {
+                display: none;
+            }
+
+            .intro {
+                position: relative;
+                min-height: 520px;
+                padding: 130px var(--page-gutter) 120px;
+                gap: clamp(60px, 9vw, 150px);
+                overflow: hidden;
+            }
+
+            .intro::before {
+                content: "";
+                position: absolute;
+                top: 54px;
+                left: 0;
+                width: 56%;
+                height: 1px;
+                background: var(--rule);
+            }
+
+            .intro::after {
+                content: "";
+                position: absolute;
+                top: 50px;
+                left: 56%;
+                width: 9px;
+                height: 9px;
+                background: var(--cs-gold);
+            }
+
+            .intro-label {
+                display: none;
+            }
+
+            .intro-heading {
+                max-width: 650px;
+                font-size: clamp(52px, 5.1vw, 78px);
+                line-height: 0.96;
+            }
+
+            .intro-heading em {
+                color: var(--cs-gold);
+            }
+
+            .intro-body {
+                max-width: 620px;
+                font-size: 17px;
+                line-height: 1.75;
+            }
+
+            .intro-partners {
+                margin-top: 44px;
+                padding-top: 24px;
+            }
+
+            .intro-partners-list {
+                gap: 12px 0;
+            }
+
+            .intro-partners-list span {
+                display: inline-flex;
+                align-items: center;
+                font-family: var(--sans);
+                font-size: 13px;
+                letter-spacing: 0.03em;
+            }
+
+            .intro-partners-list span:not(:last-child)::after {
+                content: "";
+                width: 4px;
+                height: 4px;
+                margin: 0 16px;
+                background: var(--cs-gold);
+            }
+
+            .js .motion-reveal {
+                opacity: 0;
+                transform: translate3d(0, 42px, 0);
+                transition:
+                    opacity 0.9s ease,
+                    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .js .motion-reveal.is-visible {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .js .motion-image {
+                position: relative;
+                overflow: hidden;
+                opacity: 0;
+                transform: translate3d(0, 34px, 0);
+                transition:
+                    opacity 0.35s ease,
+                    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .js .motion-image::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: var(--cs-gold);
+                transform: translateY(0);
+                transition: transform 1.2s 0.12s cubic-bezier(0.77, 0, 0.18, 1);
+                pointer-events: none;
+            }
+
+            .js .motion-image.is-visible {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .js .motion-image.is-visible::after {
+                transform: translateY(-101%);
+            }
+
+            .motion-image img {
+                width: 100%;
+                height: calc(100% + 64px);
+                margin-top: -32px;
+                object-fit: cover;
+                transform: translate3d(0, var(--image-shift, 0), 0) scale(1.04);
+                transition: transform 0.12s linear;
+                will-change: transform;
+            }
+
+            .experience-section {
+                position: relative;
+                padding: 126px var(--page-gutter) 140px;
+                background: var(--cs-limestone);
+                color: var(--cs-black);
+                overflow: hidden;
+            }
+
+            .experience-header {
+                display: grid;
+                grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+                align-items: end;
+                gap: clamp(56px, 9vw, 150px);
+                margin-bottom: 112px;
+            }
+
+            .experience-header h2 {
+                position: relative;
+                max-width: 740px;
+                padding-bottom: 34px;
+                font-family: var(--serif);
+                font-size: clamp(52px, 5vw, 78px);
+                font-weight: 300;
+                line-height: 0.98;
+                letter-spacing: -0.025em;
+            }
+
+            .experience-header h2::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: min(520px, 85%);
+                height: 1px;
+                background: var(--rule);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .experience-header.is-visible h2::after {
+                transform: scaleX(1);
+            }
+
+            .experience-header h2::before {
+                content: "";
+                position: absolute;
+                left: min(520px, 85%);
+                bottom: -4px;
+                width: 9px;
+                height: 9px;
+                background: var(--cs-gold);
+                opacity: 0;
+                transition: opacity 0.25s 1.15s;
+            }
+
+            .experience-header.is-visible h2::before {
+                opacity: 1;
+            }
+
+            .experience-header h2 em {
+                display: block;
+                color: var(--cs-gold);
+                font-weight: 300;
+            }
+
+            .experience-header > p {
+                max-width: 520px;
+                padding-bottom: 32px;
+                color: rgba(0, 0, 0, 0.68);
+                font-size: 17px;
+                line-height: 1.72;
+            }
+
+            .experience-row {
+                display: grid;
+                grid-template-columns: repeat(12, minmax(0, 1fr));
+                align-items: center;
+                gap: 28px;
+                max-width: 1500px;
+                margin-inline: auto;
+            }
+
+            .experience-row + .experience-row {
+                margin-top: 88px;
+            }
+
+            .experience-copy {
+                position: relative;
+                padding-top: 30px;
+                border-top: 1px solid rgba(209, 163, 90, 0.62);
+            }
+
+            .experience-number {
+                display: block;
+                margin-bottom: 16px;
+                color: var(--cs-gold);
+                font-family: var(--serif);
+                font-size: 27px;
+                font-weight: 300;
+            }
+
+            .experience-copy h3 {
+                margin-bottom: 16px;
+                font-family: var(--serif);
+                font-size: clamp(38px, 3.5vw, 54px);
+                font-weight: 300;
+                line-height: 1;
+            }
+
+            .experience-copy p {
+                max-width: 300px;
+                color: rgba(0, 0, 0, 0.68);
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .experience-row-scale .experience-media {
+                grid-column: 4 / 10;
+                aspect-ratio: 16 / 9;
+            }
+
+            .experience-row-scale .experience-copy {
+                grid-column: 10 / 13;
+            }
+
+            .experience-row-movement .experience-media {
+                grid-column: 4 / 11;
+                grid-row: 1;
+                aspect-ratio: 16 / 8;
+            }
+
+            .experience-row-movement .experience-copy {
+                grid-column: 1 / 4;
+                grid-row: 1;
+            }
+
+            .experience-row-material .experience-media {
+                grid-column: 1 / 7;
+                aspect-ratio: 16 / 9;
+            }
+
+            .experience-row-material .experience-copy {
+                grid-column: 7 / 10;
+            }
+
+            .experience-row:nth-of-type(3) .motion-image,
+            .experience-row:nth-of-type(4) .motion-image {
+                transition-delay: 0.08s;
+            }
+
+            .gallery-section {
+                padding: 118px var(--page-gutter) 128px;
+            }
+
+            .gallery-header {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+                align-items: end;
+                gap: 72px;
+                padding: 0 0 64px;
+            }
+
+            .gallery-label {
+                margin-bottom: 12px;
+                color: rgba(255, 255, 255, 0.6);
+            }
+
+            .gallery-heading {
+                font-size: clamp(54px, 5.6vw, 86px);
+                line-height: 0.95;
+            }
+
+            .gallery-heading em {
+                display: block;
+                margin-top: 12px;
+                color: var(--cs-gold);
+            }
+
+            .gallery-intro {
+                position: relative;
+                margin: 0 0 8px;
+                padding: 28px 0 0;
+                border-top: 1px solid var(--rule);
+                color: rgba(255, 255, 255, 0.68);
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .gallery-intro::before {
+                content: "";
+                position: absolute;
+                top: -4px;
+                left: 0;
+                width: 7px;
+                height: 7px;
+                background: var(--cs-gold);
+            }
+
+            .gallery-count {
+                display: none;
+            }
+
+            .featured-grid {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: minmax(220px, 0.68fr) minmax(170px, 0.42fr);
+                gap: 28px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .featured-grid-item {
+                appearance: none;
+                border: 0;
+                border-radius: 0;
+                background: transparent;
+                color: inherit;
+                font: inherit;
+                text-align: left;
+                overflow: visible;
+            }
+
+            .featured-grid-item:nth-child(1) {
+                grid-column: 1 / 8;
+                grid-row: 1 / 3;
+            }
+
+            .featured-grid-item:nth-child(2) {
+                grid-column: 8 / 13;
+                grid-row: 1;
+            }
+
+            .featured-grid-item:nth-child(3) {
+                grid-column: 8 / 13;
+                grid-row: 2;
+            }
+
+            .featured-grid-item:nth-child(n + 4) {
+                display: none;
+            }
+
+            .featured-grid-item img {
+                height: calc(100% - 36px);
+                min-height: 0;
+                aspect-ratio: auto;
+                object-fit: cover;
+            }
+
+            .featured-main,
+            .featured-sm {
+                min-height: 0;
+            }
+
+            .featured-grid-item .gallery-item-overlay {
+                bottom: 36px;
+            }
+
+            .gallery-caption {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                height: 36px;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 11px;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+            }
+
+            .gallery-caption strong {
+                color: var(--cs-gold);
+                font-weight: 400;
+            }
+
+            .gallery-caption::after {
+                content: "";
+                height: 1px;
+                flex: 1;
+                margin-left: 4px;
+                background: rgba(209, 163, 90, 0.5);
+            }
+
+            .gallery-grid {
+                display: none;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                column-count: unset;
+                gap: 4px;
+                padding: 4px 0 0;
+            }
+
+            .gallery-grid.expanded {
+                display: grid;
+                animation: fadeIn 0.45s ease;
+            }
+
+            .gallery-item {
+                appearance: none;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                border-radius: 0;
+                background: var(--cs-black);
+            }
+
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 4 / 5;
+                object-fit: cover;
+            }
+
+            .gallery-item:nth-child(5n + 1) {
+                grid-column: span 2;
+            }
+
+            .gallery-item:nth-child(5n + 1) img {
+                aspect-ratio: 8 / 5;
+            }
+
+            .gallery-toggle {
+                display: inline-flex;
+                min-height: 50px;
+                align-items: center;
+                gap: 20px;
+                margin-top: 34px;
+                padding: 0 22px;
+                border: 1px solid var(--rule);
+                background: transparent;
+                color: var(--cs-gold);
+                font-family: var(--sans);
+                font-size: 10px;
+                font-weight: 600;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: color 0.25s, background 0.25s;
+            }
+
+            .gallery-toggle:hover {
+                color: var(--cs-black);
+                background: var(--cs-gold);
+            }
+
+            .gallery-toggle svg {
+                transition: transform 0.25s;
+            }
+
+            .gallery-toggle[aria-expanded="true"] svg {
+                transform: rotate(90deg);
+            }
+
+            .cta-section {
+                position: relative;
+                grid-template-columns: minmax(0, 1fr) auto;
+                padding: 128px var(--page-gutter);
+                background: var(--cs-limestone);
+                color: var(--cs-black);
+                overflow: hidden;
+            }
+
+            .cta-section::before {
+                content: "";
+                position: absolute;
+                top: 52px;
+                right: 0;
+                width: 62%;
+                height: 1px;
+                background: var(--rule);
+            }
+
+            .cta-heading {
+                max-width: 800px;
+                color: var(--cs-black);
+                font-size: clamp(52px, 5vw, 80px);
+                line-height: 0.96;
+            }
+
+            .cta-sub {
+                max-width: 580px;
+                color: rgba(0, 0, 0, 0.64);
+                font-size: 16px;
+            }
+
+            .cta-btn {
+                min-height: 54px;
+                padding: 0 30px;
+            }
+
+            footer {
+                padding: 58px var(--page-gutter) calc(58px + env(safe-area-inset-bottom));
+            }
+
+            .lb-close,
+            .lb-prev,
+            .lb-next {
+                appearance: none;
+                font-family: var(--sans);
+                cursor: pointer;
+            }
+
+            .lb-close {
+                border: 0;
+                background: transparent;
+            }
+
+            .lb-prev,
+            .lb-next {
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+
+                *,
+                *::before,
+                *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    scroll-behavior: auto !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .hero-content {
+                    width: min(650px, 72vw);
+                }
+
+                .intro {
+                    grid-template-columns: 1fr 1fr;
+                    padding: 118px var(--page-gutter) 96px;
+                }
+
+                .experience-header {
+                    gap: 56px;
+                }
+
+                .experience-row-scale .experience-media {
+                    grid-column: 3 / 10;
+                }
+
+                .experience-row-scale .experience-copy {
+                    grid-column: 10 / 13;
+                }
+
+                .experience-row-material .experience-media {
+                    grid-column: 1 / 8;
+                }
+
+                .featured-grid {
+                    grid-template-rows: minmax(210px, 0.62fr) minmax(160px, 0.38fr);
+                }
+
+                .gallery-grid {
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                }
+
+                .cta-section {
+                    grid-template-columns: 1fr;
+                    padding: 118px var(--page-gutter) 96px;
+                }
+            }
+
+            @media (max-width: 720px) {
+                :root {
+                    --nav-h: 72px;
+                    --page-gutter: 24px;
+                }
+
+                nav {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                .nav-logo {
+                    gap: 10px;
+                }
+
+                .nav-logo-mark {
+                    width: 29px;
+                    height: 29px;
+                }
+
+                .nav-wordmark {
+                    font-size: 8px;
+                    letter-spacing: 0.18em;
+                    white-space: nowrap;
+                }
+
+                .nav-cta {
+                    min-height: 40px;
+                    padding: 0 13px;
+                    font-size: 9px;
+                }
+
+                .nav-cta-label-long {
+                    display: none;
+                }
+
+                .nav-cta-label-short:not([hidden]) {
+                    display: inline;
+                }
+
+                .hero {
+                    height: 100dvh;
+                    min-height: 100dvh;
+                }
+
+                .hero-img {
+                    object-position: 50% 38%;
+                }
+
+                .hero-overlay {
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.68) 38%, rgba(0, 0, 0, 0.06) 74%);
+                }
+
+                .hero-content {
+                    width: auto;
+                    margin: auto 24px calc(32px + env(safe-area-inset-bottom));
+                    padding: 0 0 0 0;
+                    border-left: 0;
+                }
+
+                .hero-content::after {
+                    display: none;
+                }
+
+                .hero-heading {
+                    margin-bottom: 20px;
+                    font-size: clamp(50px, 14vw, 62px);
+                    line-height: 0.88;
+                }
+
+                .hero-heading em {
+                    margin-top: 9px;
+                }
+
+                .hero-eyebrow {
+                    margin-bottom: 14px;
+                    font-size: 9px;
+                    line-height: 1.5;
+                    letter-spacing: 0.18em;
+                }
+
+                .hero-sub {
+                    max-width: 350px;
+                    margin-bottom: 18px;
+                    font-size: 14px;
+                    line-height: 1.65;
+                }
+
+                .hero-link {
+                    width: 100%;
+                    min-height: 52px;
+                    justify-content: space-between;
+                }
+
+                .hero-scroll-hint {
+                    display: none;
+                }
+
+                .intro {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                    min-height: 0;
+                    padding: 104px 24px 78px;
+                }
+
+                .intro::before {
+                    top: 38px;
+                    width: calc(100% - 36px);
+                }
+
+                .intro::after {
+                    top: 34px;
+                    left: auto;
+                    right: 28px;
+                }
+
+                .intro-heading {
+                    font-size: clamp(48px, 14vw, 62px);
+                }
+
+                .intro-body {
+                    font-size: 15px;
+                }
+
+                .intro-partners-list span:not(:last-child)::after {
+                    margin: 0 10px;
+                }
+
+                .experience-section {
+                    padding: 96px 24px 100px;
+                }
+
+                .experience-header {
+                    grid-template-columns: 1fr;
+                    gap: 34px;
+                    margin-bottom: 72px;
+                }
+
+                .experience-header h2 {
+                    padding-bottom: 30px;
+                    font-size: clamp(48px, 14vw, 62px);
+                }
+
+                .experience-header > p {
+                    padding-bottom: 0;
+                    font-size: 15px;
+                }
+
+                .experience-row {
+                    grid-template-columns: 1fr;
+                    gap: 28px;
+                }
+
+                .experience-row + .experience-row {
+                    margin-top: 72px;
+                }
+
+                .experience-row-scale .experience-media,
+                .experience-row-movement .experience-media,
+                .experience-row-material .experience-media,
+                .experience-row-scale .experience-copy,
+                .experience-row-movement .experience-copy,
+                .experience-row-material .experience-copy {
+                    grid-column: 1;
+                    grid-row: auto;
+                }
+
+                .experience-row-scale .experience-media,
+                .experience-row-movement .experience-media,
+                .experience-row-material .experience-media {
+                    aspect-ratio: 4 / 3;
+                }
+
+                .experience-copy {
+                    padding: 24px 0 0;
+                }
+
+                .experience-number {
+                    margin-bottom: 10px;
+                    font-size: 23px;
+                }
+
+                .experience-copy h3 {
+                    font-size: 42px;
+                }
+
+                .experience-copy p {
+                    max-width: 360px;
+                }
+
+                .gallery-section {
+                    padding: 88px 16px 90px;
+                }
+
+                .gallery-header {
+                    grid-template-columns: 1fr;
+                    gap: 30px;
+                    padding: 0 8px 44px;
+                }
+
+                .gallery-heading {
+                    font-size: clamp(50px, 14.5vw, 66px);
+                }
+
+                .gallery-intro {
+                    font-size: 14px;
+                }
+
+                .featured-grid {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: minmax(340px, 58vh) minmax(220px, 34vh);
+                    gap: 18px 4px;
+                }
+
+                .featured-grid-item:nth-child(1) {
+                    grid-column: 1 / 3;
+                    grid-row: 1;
+                }
+
+                .featured-grid-item:nth-child(2) {
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+
+                .featured-grid-item:nth-child(3) {
+                    grid-column: 2;
+                    grid-row: 2;
+                }
+
+                .gallery-caption {
+                    font-size: 9px;
+                    letter-spacing: 0.04em;
+                }
+
+                .gallery-caption::after {
+                    display: none;
+                }
+
+                .gallery-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+
+                .gallery-item:nth-child(5n + 1) {
+                    grid-column: span 2;
+                }
+
+                .gallery-toggle {
+                    width: calc(100% - 16px);
+                    justify-content: space-between;
+                    margin: 28px 8px 0;
+                }
+
+                .cta-section {
+                    gap: 42px;
+                    padding: 104px 24px 80px;
+                }
+
+                .cta-section::before {
+                    top: 38px;
+                    width: calc(100% - 24px);
+                }
+
+                .cta-heading {
+                    font-size: clamp(48px, 14vw, 62px);
+                }
+
+                .cta-btn {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+
+                footer {
+                    padding: 48px 24px calc(48px + env(safe-area-inset-bottom));
+                }
+
+                .lb-prev,
+                .lb-next {
+                    top: auto;
+                    bottom: calc(22px + env(safe-area-inset-bottom));
+                    transform: none;
+                }
+
+                .lb-close {
+                    top: calc(16px + env(safe-area-inset-top));
+                    right: 16px;
+                }
+
+                .lb-counter {
+                    bottom: calc(43px + env(safe-area-inset-bottom));
+                }
+            }
+
+            @media (display-mode: standalone) {
+                nav {
+                    background: rgba(0, 0, 0, 0.98);
+                }
+
+                .hero {
+                    height: 100dvh;
+                    min-height: 100dvh;
+                }
+            }
         </style>
         <script>
             window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -828,7 +1926,12 @@
                 <span class="nav-wordmark">Cornerstone</span>
             </a>
             <a href="https://www.cornerstonecompaniesfl.com" target="_blank" rel="noopener" class="nav-cta">
-                Visit Our Website <span class="nav-cta-arrow">→</span>
+                <span class="nav-cta-label-long">Visit Cornerstone</span><span class="nav-cta-label-short">Visit</span>
+                <span class="nav-cta-arrow" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
             </a>
         </nav>
 
@@ -836,19 +1939,28 @@
         <section class="hero">
             <img
                 class="hero-img"
-                src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euHhIYoXxGUuOMTIXk71rKmwH38stLn0pJoZDx"
-                alt="Cornerstone Showroom — luxury windows and doors"
+                src="./assets/showroom-hero-1600.jpg"
+                srcset="./assets/showroom-hero-960.webp 960w, ./assets/showroom-hero-1600.webp 1600w, ./assets/showroom-hero-2400.webp 2400w"
+                sizes="100vw"
+                width="1600"
+                height="902"
+                alt="Cornerstone's Brombal Group window and door showroom"
                 loading="eager"
                 fetchpriority="high"
             />
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <p class="hero-eyebrow">West Palm Beach, Florida — New Showroom</p>
                 <h1 class="hero-heading">Setting<br /><em>New Standards.</em></h1>
+                <p class="hero-eyebrow">West Palm Beach, Florida</p>
                 <p class="hero-sub">
-                    South Florida's premier destination for luxury impact windows and doors. Where architecture meets artistry, and every detail is built to
-                    endure.
+                    Cornerstone's Brombal Group showroom in West Palm Beach. See full-scale window and door systems through proportion, material, movement, and light.
                 </p>
+                <a class="hero-link" href="#showroom">
+                    Explore the showroom
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
             </div>
             <div class="hero-scroll-hint">
                 <span class="hero-scroll-label">Scroll</span>
@@ -859,48 +1971,98 @@
         <div class="gold-rule"></div>
 
         <!-- INTRO -->
-        <section class="intro">
+        <section class="intro" id="story">
             <div class="reveal">
                 <p class="intro-label">Our Story</p>
-                <h2 class="intro-heading">Design-forward fenestration for <em>visionary</em> builders</h2>
+                <h2 class="intro-heading">Architecture begins with <em>the opening.</em></h2>
             </div>
             <div class="reveal">
                 <div class="intro-body">
                     <p>
-                        Founded in 2017 Cornerstone is a family-owned company built on the belief that extraordinary architecture deserves extraordinary
-                        fenestration.
+                        Founded in 2017, Cornerstone is a family-owned company built on a belief: extraordinary architecture deserves extraordinary fenestration.
                     </p>
                     <p>
-                        Our new showroom is a living gallery of what's possible. Walk through curated installations from our world-class manufacturing partners
-                        and experience the intersection of performance and pure design.
+                        The West Palm Beach Brombal Group showroom brings those decisions to full scale. Walk through complete installations and see how
+                        performance and design meet in the details.
                     </p>
                 </div>
                 <div class="intro-partners">
-                    <p class="intro-partners-label">Manufacturer Partners</p>
+                    <p class="intro-partners-label">Showroom Manufacturer</p>
                     <div class="intro-partners-list">
                         <span>Brombal Group</span>
-                        <span>ES Windows</span>
-                        <span>Kolbe</span>
-                        <span>Oikos</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EXPERIENCE -->
+        <section class="experience-section" id="experience" aria-labelledby="experience-title">
+            <header class="experience-header motion-reveal">
+                <h2 id="experience-title">Some decisions need more than <em>a sample.</em></h2>
+                <p>The Brombal Group showroom turns drawings and specifications into something you can see, move, and compare at full scale.</p>
+            </header>
+
+            <div class="experience-row experience-row-scale">
+                <div class="experience-media motion-image">
+                    <img
+                        src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euNfWcuy3KUkV07oTgsxwWAEJzhPIBfrcdLR8X"
+                        alt="Wide view of full-scale Brombal Group window and door installations in the Cornerstone showroom"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="experience-copy motion-reveal">
+                    <span class="experience-number">01</span>
+                    <h3>Scale</h3>
+                    <p>Compare sightlines, proportions, and thresholds at architectural scale.</p>
+                </div>
+            </div>
+
+            <div class="experience-row experience-row-movement">
+                <div class="experience-media motion-image">
+                    <img
+                        src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eu82niPAcXKYyQGnhDWZ0ixvRdqC5pPcgFB19U"
+                        alt="Operable Brombal Group window and door systems arranged throughout the showroom"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="experience-copy motion-reveal">
+                    <span class="experience-number">02</span>
+                    <h3>Movement</h3>
+                    <p>Slide, swing, pivot, and pocket. Feel how each system moves through the room.</p>
+                </div>
+            </div>
+
+            <div class="experience-row experience-row-material">
+                <div class="experience-media motion-image">
+                    <img
+                        src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euGOOEKgldlD6gUIBw5r4VQqmoNApYa0zbCP7X"
+                        alt="Close view of a window profile showing metal, glass, and internal construction"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="experience-copy motion-reveal">
+                    <span class="experience-number">03</span>
+                    <h3>Material</h3>
+                    <p>See steel, aluminum, wood, glass, and finish choices under the same light.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- GALLERY -->
-        <section class="gallery-section">
+        <section class="gallery-section" id="showroom">
             <div class="gallery-header reveal">
                 <div class="gallery-header-left">
-                    <p class="gallery-label">The Showroom</p>
-                    <h2 class="gallery-heading">A space built for <em>bold</em> ideas</h2>
+                    <p class="gallery-label">Brombal Group Showroom</p>
+                    <h2 class="gallery-heading">Built to be <em>experienced.</em></h2>
                 </div>
+                <p class="gallery-intro">A working gallery of material, movement, proportion, and light.</p>
                 <span class="gallery-count">62 Images</span>
             </div>
 
             <!-- Featured 4-up grid -->
             <div class="featured-grid">
-                <div class="featured-grid-item featured-main" onclick="openLightbox(0)">
-                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eunVR7fiFbRJImon8WCZQYwDEOeMABV3gPFHvL" alt="Cornerstone Showroom" loading="lazy" />
+                <button type="button" class="featured-grid-item featured-main" onclick="openLightbox(0)" aria-label="01 Entry — open photograph">
+                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eunVR7fiFbRJImon8WCZQYwDEOeMABV3gPFHvL" alt="Cornerstone Brombal Group showroom" loading="lazy" />
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-zoom">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -908,9 +2070,10 @@
                             </svg>
                         </div>
                     </div>
-                </div>
-                <div class="featured-grid-item featured-sm" onclick="openLightbox(1)">
-                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eu3urw0958n6AV9CIRPDpHdB2Ftqu7Xm1EUcvr" alt="Cornerstone Showroom" loading="lazy" />
+                    <span class="gallery-caption"><strong>01</strong> Entry</span>
+                </button>
+                <button type="button" class="featured-grid-item featured-sm" onclick="openLightbox(1)" aria-label="02 Steel — open photograph">
+                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2eu3urw0958n6AV9CIRPDpHdB2Ftqu7Xm1EUcvr" alt="Cornerstone Brombal Group showroom" loading="lazy" />
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-zoom">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -918,9 +2081,10 @@
                             </svg>
                         </div>
                     </div>
-                </div>
-                <div class="featured-grid-item featured-sm" onclick="openLightbox(2)">
-                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euVm6ogZA6FEyavolYUfQDHheLj2IdBSWnAiNq" alt="Cornerstone Showroom" loading="lazy" />
+                    <span class="gallery-caption"><strong>02</strong> Steel</span>
+                </button>
+                <button type="button" class="featured-grid-item featured-sm" onclick="openLightbox(2)" aria-label="03 Detail — open photograph">
+                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euVm6ogZA6FEyavolYUfQDHheLj2IdBSWnAiNq" alt="Cornerstone Brombal Group showroom" loading="lazy" />
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-zoom">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -928,9 +2092,10 @@
                             </svg>
                         </div>
                     </div>
-                </div>
+                    <span class="gallery-caption"><strong>03</strong> Detail</span>
+                </button>
                 <div class="featured-grid-item featured-sm" onclick="openLightbox(3)">
-                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euBSpFIcKH6mPcFb92e1Xja3VTdEtKnrkgMzyf" alt="Cornerstone Showroom" loading="lazy" />
+                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euBSpFIcKH6mPcFb92e1Xja3VTdEtKnrkgMzyf" alt="Cornerstone Brombal Group showroom" loading="lazy" />
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-zoom">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -940,7 +2105,7 @@
                     </div>
                 </div>
                 <div class="featured-grid-item featured-sm" onclick="openLightbox(4)">
-                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euecqkSD3JQty8f0rGVCvWZq5Xl9RSainmOcgK" alt="Cornerstone Showroom" loading="lazy" />
+                    <img src="https://bzsgnssrkj.ufs.sh/f/15407bOoZ2euecqkSD3JQty8f0rGVCvWZq5Xl9RSainmOcgK" alt="Cornerstone Brombal Group showroom" loading="lazy" />
                     <div class="gallery-item-overlay">
                         <div class="gallery-item-zoom">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -953,15 +2118,20 @@
 
             <!-- Masonry grid for remaining images -->
             <div class="gallery-grid" id="gallery-grid"></div>
+            <button type="button" class="gallery-toggle" id="gallery-toggle" aria-expanded="false" aria-controls="gallery-grid">
+                <span>View all 62 photographs</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
         </section>
 
         <!-- CTA -->
         <section class="cta-section reveal">
             <div>
-                <h2 class="cta-heading">Ready to realize your <em>boldest</em> design?</h2>
+                <h2 class="cta-heading">See the work at <em>full scale.</em></h2>
                 <p class="cta-sub">
-                    From concept to installation, Cornerstone partners with architects and builders to create homes that stand apart. Let's build something
-                    extraordinary together.
+                    Walk the Brombal Group showroom, operate the systems, and compare the details that photographs cannot capture.
                 </p>
             </div>
             <a href="https://www.cornerstonecompaniesfl.com" target="_blank" rel="noopener" class="cta-btn">
@@ -976,22 +2146,22 @@
         <footer>
             <div>
                 <div class="footer-logo-text">Cornerstone</div>
-                <div class="footer-tagline">"Setting New Standards."</div>
+                <div class="footer-tagline">Setting New Standards.</div>
             </div>
             <div class="footer-right">
-                <p class="footer-copy">© 2025 Cornerstone Companies. West Palm Beach, Florida.</p>
-                <a href="https://www.cornerstonecompaniesfl.com" target="_blank" rel="noopener" class="footer-link"> cornerstonecompaniesfl.com → </a>
+                <p class="footer-copy">© 2026 Cornerstone Companies. West Palm Beach, Florida.</p>
+                <a href="https://www.cornerstonecompaniesfl.com" target="_blank" rel="noopener" class="footer-link">cornerstonecompaniesfl.com →</a>
             </div>
         </footer>
 
         <!-- LIGHTBOX -->
-        <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-            <span class="lb-close" onclick="closeLightbox()" aria-label="Close">✕</span>
-            <span class="lb-prev" onclick="prevImage()" aria-label="Previous">‹</span>
+        <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+            <button type="button" class="lb-close" onclick="closeLightbox()" aria-label="Close image viewer">✕</button>
+            <button type="button" class="lb-prev" onclick="prevImage()" aria-label="Previous image">‹</button>
             <div class="lb-img-wrap">
-                <img id="lb-img" src="" alt="Showroom image" />
+                <img id="lb-img" src="" alt="Brombal Group showroom image" />
             </div>
-            <span class="lb-next" onclick="nextImage()" aria-label="Next">›</span>
+            <button type="button" class="lb-next" onclick="nextImage()" aria-label="Next image">›</button>
             <div class="lb-counter" id="lb-counter"></div>
         </div>
 
@@ -1070,11 +2240,24 @@
             const zoomSvg = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5.5 9.5L1 14M9 1H13M13 1V5M13 1L8 6" stroke="white" stroke-width="1.2"/></svg>`;
             images.slice(5).forEach((url, i) => {
                 const realIdx = i + 5;
-                const item = document.createElement("div");
+                const item = document.createElement("button");
+                item.type = "button";
                 item.className = "gallery-item";
+                item.setAttribute("aria-label", `Open Brombal Group showroom photograph ${realIdx + 1}`);
                 item.onclick = () => openLightbox(realIdx);
-                item.innerHTML = `<img src="${url}" alt="Cornerstone Showroom" loading="lazy" /><div class="gallery-item-overlay"><div class="gallery-item-zoom">${zoomSvg}</div></div>`;
+                item.innerHTML = `<img src="${url}" alt="Cornerstone Brombal Group showroom" loading="lazy" /><div class="gallery-item-overlay"><div class="gallery-item-zoom">${zoomSvg}</div></div>`;
                 grid.appendChild(item);
+            });
+
+            // Keep the page curated by default; reveal the complete archive on request.
+            const galleryToggle = document.getElementById("gallery-toggle");
+            const galleryToggleLabel = galleryToggle.querySelector("span");
+            galleryToggle.addEventListener("click", () => {
+                const expanded = galleryToggle.getAttribute("aria-expanded") === "true";
+                galleryToggle.setAttribute("aria-expanded", String(!expanded));
+                grid.classList.toggle("expanded", !expanded);
+                galleryToggleLabel.textContent = expanded ? "View all 62 photographs" : "Hide photo archive";
+                if (expanded) document.getElementById("showroom").scrollIntoView({ behavior: "smooth", block: "start" });
             });
 
             // Lightbox
@@ -1082,17 +2265,24 @@
             const lb = document.getElementById("lightbox");
             const lbImg = document.getElementById("lb-img");
             const lbCounter = document.getElementById("lb-counter");
+            let lastFocusedElement = null;
+            let touchStartX = 0;
 
             function openLightbox(idx) {
+                lastFocusedElement = document.activeElement;
                 currentIdx = idx;
                 lbImg.src = images[idx];
                 lbCounter.textContent = `${idx + 1} / ${images.length}`;
                 lb.classList.add("open");
+                lb.setAttribute("aria-hidden", "false");
                 document.body.style.overflow = "hidden";
+                lb.querySelector(".lb-close").focus();
             }
             function closeLightbox() {
                 lb.classList.remove("open");
+                lb.setAttribute("aria-hidden", "true");
                 document.body.style.overflow = "";
+                lastFocusedElement?.focus();
             }
             function nextImage() {
                 currentIdx = (currentIdx + 1) % images.length;
@@ -1108,11 +2298,31 @@
             lb.addEventListener("click", (e) => {
                 if (e.target === lb) closeLightbox();
             });
+            lb.addEventListener("touchstart", (e) => {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+            lb.addEventListener("touchend", (e) => {
+                const distance = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(distance) < 50) return;
+                distance < 0 ? nextImage() : prevImage();
+            }, { passive: true });
             document.addEventListener("keydown", (e) => {
                 if (!lb.classList.contains("open")) return;
                 if (e.key === "Escape") closeLightbox();
                 if (e.key === "ArrowRight") nextImage();
                 if (e.key === "ArrowLeft") prevImage();
+                if (e.key === "Tab") {
+                    const controls = [...lb.querySelectorAll("button")];
+                    const first = controls[0];
+                    const last = controls[controls.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
             });
 
             // Navbar scroll
@@ -1139,6 +2349,54 @@
                 { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
             );
             revealEls.forEach((el) => observer.observe(el));
+
+            // Architectural motion: clipped image reveals, drawing rules, and slow scroll depth.
+            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+            const motionEls = document.querySelectorAll(".motion-reveal, .motion-image");
+            if (reducedMotion.matches) {
+                motionEls.forEach((el) => el.classList.add("is-visible"));
+            } else {
+                const motionObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (!entry.isIntersecting) return;
+                            entry.target.classList.add("is-visible");
+                            motionObserver.unobserve(entry.target);
+                        });
+                    },
+                    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+                );
+                motionEls.forEach((el) => motionObserver.observe(el));
+
+                const heroImage = document.querySelector(".hero-img");
+                const parallaxImages = [...document.querySelectorAll(".motion-image img")];
+                let parallaxFrame = 0;
+
+                const updateParallax = () => {
+                    const viewportCenter = window.innerHeight / 2;
+                    heroImage.style.setProperty("--hero-shift", `${Math.min(window.scrollY * 0.055, 36)}px`);
+                    parallaxImages.forEach((image) => {
+                        const rect = image.parentElement.getBoundingClientRect();
+                        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+                        const distance = (rect.top + rect.height / 2 - viewportCenter) / window.innerHeight;
+                        image.style.setProperty("--image-shift", `${Math.max(-26, Math.min(26, distance * -32))}px`);
+                    });
+                    parallaxFrame = 0;
+                };
+
+                const requestParallax = () => {
+                    if (parallaxFrame) return;
+                    parallaxFrame = requestAnimationFrame(updateParallax);
+                };
+
+                updateParallax();
+                window.addEventListener("scroll", requestParallax, { passive: true });
+                window.addEventListener("resize", requestParallax, { passive: true });
+            }
+
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+            }
         </script>
     </body>
 </html>
