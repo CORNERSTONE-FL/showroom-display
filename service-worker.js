@@ -1,14 +1,14 @@
-const SHELL_CACHE = "cornerstone-showroom-shell-v3";
-const RUNTIME_CACHE = "cornerstone-showroom-runtime-v3";
+const SHELL_CACHE = "cornerstone-showroom-shell-v4";
+const RUNTIME_CACHE = "cornerstone-showroom-runtime-v4";
 const APP_SHELL = [
     "./",
     "./index.html",
     "./manifest.webmanifest",
     "./favicon.svg",
     "./favicon-32.png",
-    "./favicon-192.png",
-    "./favicon-512.png",
-    "./apple-touch-icon.png",
+    "./app-icon-180.png",
+    "./app-icon-192.png",
+    "./app-icon-512.png",
     "./assets/showroom-hero-960.webp",
     "./assets/showroom-hero-1600.webp",
     "./assets/showroom-hero-2400.webp",
