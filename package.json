@@ -1,24 +1,28 @@
 {
   "name": "showroom-display",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Cornerstone Brombal Group showroom site: a static, installable gallery deployed on Vercel.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "upload:images": "node upload-images.mjs",
+    "upload:assets": "node upload-assets.mjs",
+    "upload:og": "node upload-og.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pirut/showroom-display.git"
+    "url": "git+https://github.com/CORNERSTONE-FL/showroom-display.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Cornerstone",
+  "license": "UNLICENSED",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/pirut/showroom-display/issues"
+    "url": "https://github.com/CORNERSTONE-FL/showroom-display/issues"
   },
-  "homepage": "https://github.com/pirut/showroom-display#readme",
+  "homepage": "https://github.com/CORNERSTONE-FL/showroom-display#readme",
   "dependencies": {
     "uploadthing": "^7.7.4"
+  },
+  "engines": {
+    "node": ">=20.12"
   }
 }
