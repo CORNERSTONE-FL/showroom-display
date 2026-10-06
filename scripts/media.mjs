@@ -113,7 +113,11 @@ if (mode === "sync" && prune) {
     for (const key of remote.keys()) {
         if (keys.has(key)) continue;
         await client.mutation(anyApi.media.remove, { secret, key });
-        console.log(`  ✗ removed ${key}`);
+        console.log(`  ✗ retired ${key}`);
+    }
+    // Replaced and removed files are kept for a while so deployed pages using the old manifest still load.
+    for (const key of await client.mutation(anyApi.media.purgeRetired, { secret, olderThanDays: 30 })) {
+        console.log(`  ✗ deleted old copy of ${key}`);
     }
 }
 

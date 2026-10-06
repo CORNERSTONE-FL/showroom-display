@@ -12,4 +12,10 @@ export default defineSchema({
         width: v.optional(v.number()),
         height: v.optional(v.number()),
     }).index("by_key", ["key"]),
+    // Files replaced or removed by a sync, kept until `purgeRetired` deletes them.
+    retired: defineTable({
+        key: v.string(),
+        storageId: v.id("_storage"),
+        retiredAt: v.number(),
+    }).index("by_retiredAt", ["retiredAt"]),
 });

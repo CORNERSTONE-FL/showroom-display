@@ -61,7 +61,7 @@ cp .env.example .env         # then fill in CONVEX_URL (production) and the same
 
 1. Put the original in `NEW SHOWROOM/` (or point `MEDIA_SOURCE_DIR` in `.env` at another folder). Full-resolution JPEGs are fine; the script resizes them.
 2. Add an entry to `media/catalog.json`: a short unique `id`, the `file` name, a `group` (`spaces`, `systems`, `details` or `evening`), a `caption` and descriptive `alt` text. Entries appear in the gallery in file order. Add `"gallery": false` for a photo used only in a page section.
-3. Run `npm run media:sync`. Only new or changed files are uploaded. Add `--prune` (`npm run media:sync -- --prune`) to delete files from Convex that are no longer in the catalog.
+3. Run `npm run media:sync`. Only new or changed files are uploaded. Add `--prune` (`npm run media:sync -- --prune`) to drop files that are no longer in the catalog. Replaced and dropped files stay in Convex for 30 days so the live site keeps working until the new manifest is deployed; each `--prune` run deletes the ones older than that. After changing anything in `convex/`, run `npm run convex:deploy` before syncing.
 4. Commit `media/catalog.json` and the regenerated `assets/media-manifest.js`, open a pull request, check the Vercel preview and merge.
 
 Section images (the Scale/Movement/Material rows, the collection cards, the details grid and the visit photo) point at catalog ids through `data-media="..."` attributes in `index.html`, so swapping one is a one-word change.

@@ -1,8 +1,18 @@
 import { ConvexError, v } from "convex/values";
 import { mutation, query } from "./_generated/server";
+import type { Id } from "./_generated/dataModel";
+import type { MutationCtx } from "./_generated/server";
+
+const DAY_MS = 24 * 60 * 60 * 1000;
 
 // Writes are limited to whoever holds MEDIA_UPLOAD_SECRET, set on the deployment with
-// `npx convex env set MEDIA_UPLOAD_SECRET <value>` and in the local .env for the sync script.
+// `npx convex env set MEDIA_UPLOAD_SECRET <value> --prod` and in the local .env for the sync script.
+// A replaced or removed file stays in storage until `purgeRetired` runs, so pages still
+// serving the previous manifest keep working until the new one is deployed.
+async function retire(ctx: MutationCtx, key: string, storageId: Id<"_storage">) {
+    await ctx.db.insert("retired", { key, storageId, retiredAt: Date.now() });
+}
+
 function assertSecret(secret: string) {
     const expected = process.env.MEDIA_UPLOAD_SECRET;
     if (!expected || secret !== expected) {
@@ -52,7 +62,7 @@ export const save = mutation({
             .withIndex("by_key", (q) => q.eq("key", file.key))
             .unique();
         if (existing) {
-            if (existing.storageId !== file.storageId) await ctx.storage.delete(existing.storageId);
+            if (existing.storageId !== file.storageId) await retire(ctx, existing.key, existing.storageId);
             await ctx.db.patch(existing._id, file);
         } else {
             await ctx.db.insert("media", file);
@@ -70,8 +80,25 @@ export const remove = mutation({
             .withIndex("by_key", (q) => q.eq("key", key))
             .unique();
         if (!existing) return false;
-        await ctx.storage.delete(existing.storageId);
+        await retire(ctx, existing.key, existing.storageId);
         await ctx.db.delete(existing._id);
         return true;
+    },
+});
+
+export const purgeRetired = mutation({
+    args: { secret: v.string(), olderThanDays: v.number() },
+    handler: async (ctx, { secret, olderThanDays }) => {
+        assertSecret(secret);
+        const cutoff = Date.now() - olderThanDays * DAY_MS;
+        const rows = await ctx.db
+            .query("retired")
+            .withIndex("by_retiredAt", (q) => q.lt("retiredAt", cutoff))
+            .collect();
+        for (const row of rows) {
+            await ctx.storage.delete(row.storageId);
+            await ctx.db.delete(row._id);
+        }
+        return rows.map((row) => row.key);
     },
 });
