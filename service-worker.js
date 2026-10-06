@@ -1,5 +1,5 @@
-const SHELL_CACHE = "cornerstone-showroom-shell-v4";
-const RUNTIME_CACHE = "cornerstone-showroom-runtime-v4";
+const SHELL_CACHE = "cornerstone-showroom-shell-v5";
+const RUNTIME_CACHE = "cornerstone-showroom-runtime-v5";
 const APP_SHELL = [
     "./",
     "./index.html",
@@ -13,6 +13,10 @@ const APP_SHELL = [
     "./assets/showroom-hero-1600.webp",
     "./assets/showroom-hero-2400.webp",
     "./assets/showroom-hero-1600.jpg",
+    "./assets/media-manifest.js",
+    "./assets/fonts/cormorant-garamond-latin-wght-normal.woff2",
+    "./assets/fonts/cormorant-garamond-latin-wght-italic.woff2",
+    "./assets/fonts/work-sans-latin-wght-normal.woff2",
 ];
 
 self.addEventListener("install", (event) => {
@@ -54,7 +58,7 @@ async function staleWhileRevalidate(request) {
             if (response.ok || response.type === "opaque") {
                 const cache = await caches.open(RUNTIME_CACHE);
                 await cache.put(request, response.clone());
-                await trimCache(RUNTIME_CACHE, 24);
+                await trimCache(RUNTIME_CACHE, 60);
             }
             return response;
         })
@@ -66,7 +70,7 @@ self.addEventListener("fetch", (event) => {
     const { request } = event;
     if (request.method !== "GET") return;
 
-    if (request.mode === "navigate") {
+    if (request.mode === "navigate" || new URL(request.url).pathname.endsWith("/media-manifest.js")) {
         event.respondWith(networkFirst(request));
         return;
     }

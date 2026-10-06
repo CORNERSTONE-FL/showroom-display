@@ -1,0 +1,10 @@
+# Source and tooling that the static site doesn't serve.
+convex
+scripts
+media
+node_modules
+NEW SHOWROOM
+.media-build
+og-template.html
+*.md
+docs
