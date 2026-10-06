@@ -8,15 +8,17 @@ Brand colors, type and voice are documented in [`cornerstone-brand-guidelines.md
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The whole site: markup, styles and scripts, including the gallery `images` array. |
-| `assets/` | Hero images, served from the site itself and precached for offline use. |
-| `service-worker.js` | Offline support. Caches the app shell plus any photos the visitor has viewed. |
+| `index.html` | The whole site: markup, styles and scripts. |
+| `assets/media-manifest.js` | Generated list of gallery photos with their Convex URLs, sizes and captions. Don't edit by hand. |
+| `media/catalog.json` | The photo list you edit: which originals appear, in what order, with captions, alt text and gallery group. |
+| `scripts/media.mjs` | Resizes the originals to WebP and uploads them to Convex (`npm run media:sync`). |
+| `convex/` | The Convex backend: a `media` table and the functions the sync script calls. |
+| `assets/` | Hero images and self-hosted fonts, served from the site itself and precached for offline use. |
+| `service-worker.js` | Offline support. Caches the app shell plus photos the visitor has viewed. |
 | `manifest.webmanifest`, `app-icon-*`, `favicon*`, `apple-touch-icon.png` | PWA install metadata and icons. |
-| `og-image.png`, `og-image.svg`, `og-template.html` | Social share card and its source. |
-| `upload-images.mjs` | Uploads gallery photos from the local `NEW SHOWROOM/` folder to UploadThing. |
-| `upload-assets.mjs`, `upload-og.mjs` | Upload the share image and favicons to UploadThing. |
+| `og-image.png`, `og-image.svg`, `og-template.html` | Social share card and its source. The site links `og-image.png` directly. |
 
-Gallery photos are not stored in git. They live on [UploadThing](https://uploadthing.com) and `index.html` references them by URL (`https://bzsgnssrkj.ufs.sh/f/...`). The original files are kept in a local `NEW SHOWROOM/` folder, which is git-ignored.
+Gallery photos are not stored in git. The originals live in the local `NEW SHOWROOM/` folder (git-ignored; the master copies are in Dropbox under *CORN - Cornerstone / 06_Incoming Client Assets / COMPANY PHOTOS*). `npm run media:sync` makes 640, 1280 and 2048px WebP versions, stores them in [Convex](https://convex.dev) file storage and writes their URLs into `assets/media-manifest.js`.
 
 ## Running it locally
 
@@ -39,41 +41,29 @@ Vercel Web Analytics is enabled through the `/_vercel/insights/script.js` tag in
 
 When you change files listed in `APP_SHELL` in `service-worker.js` (for example the hero images or icons), bump the version in `SHELL_CACHE` and `RUNTIME_CACHE` so returning visitors pick up the new files.
 
-## Adding gallery photos
+## Photos and Convex
 
-You need Node 20.12 or newer and the UploadThing API token for the Cornerstone app.
+### One-time setup
 
-1. **Set up once.** Install dependencies and add the token:
+You need Node 20.12 or newer and access to the Cornerstone Convex project.
 
-   ```sh
-   npm install
-   cp .env.example .env
-   # then paste the token into .env as UPLOADTHING_TOKEN=...
-   ```
+```sh
+npm install
+npx convex dev --once        # sign in, pick or create the project, push the functions in convex/
+npx convex deploy            # push the same functions to the production deployment
+npx convex env set MEDIA_UPLOAD_SECRET "<long random string>" --prod
+cp .env.example .env         # then fill in CONVEX_URL (production) and the same MEDIA_UPLOAD_SECRET
+```
 
-   The token comes from the UploadThing dashboard under API Keys. `.env` is git-ignored; never commit the token.
+`CONVEX_URL` is the production deployment URL from the Convex dashboard (Settings > URL & Deploy Key). The secret is what stops anyone else from writing to the photo store; the site itself only reads public file URLs.
 
-2. **Add the photos to `NEW SHOWROOM/`** in the repo root. JPG, JPEG, PNG and WebP are supported. Export them at a sensible web size first; a long edge around 2400px is plenty.
+### Adding or changing photos
 
-3. **Upload only the new photos.** Pass their file names so existing photos aren't uploaded again:
+1. Put the original in `NEW SHOWROOM/` (or point `MEDIA_SOURCE_DIR` in `.env` at another folder). Full-resolution JPEGs are fine; the script resizes them.
+2. Add an entry to `media/catalog.json`: a short unique `id`, the `file` name, a `group` (`spaces`, `systems`, `details` or `evening`), a `caption` and descriptive `alt` text. Entries appear in the gallery in file order. Add `"gallery": false` for a photo used only in a page section.
+3. Run `npm run media:sync`. Only new or changed files are uploaded. Add `--prune` (`npm run media:sync -- --prune`) to delete files from Convex that are no longer in the catalog.
+4. Commit `media/catalog.json` and the regenerated `assets/media-manifest.js`, open a pull request, check the Vercel preview and merge.
 
-   ```sh
-   npm run upload:images -- IMG_0901.JPEG IMG_0902.JPEG
-   ```
+Section images (the Scale/Movement/Material rows, the collection cards, the details grid and the visit photo) point at catalog ids through `data-media="..."` attributes in `index.html`, so swapping one is a one-word change.
 
-   Running `npm run upload:images` with no file names uploads everything in the folder, which creates duplicates of photos already on UploadThing.
-
-   The script prints each file's URL and finishes with a JSON list of `{ filename, url, key }`.
-
-4. **Add the URLs to `index.html`.** In the `<script>` near the bottom, append each URL to the `images` array. The first five entries are the featured 4-up grid at the top of the gallery (their `<img>` tags are also hard-coded in the featured grid markup); everything after that is built into the masonry grid automatically.
-
-5. **Update the photo count.** Search `index.html` for the current total (for example `62`) and update it in the `gallery-count` label, the "View all N photographs" button text (it appears twice: in the markup and in the toggle script), and the `// All images array` comment.
-
-6. **Open a pull request**, check the Vercel preview, and merge to publish.
-
-To replace a featured photo, swap its URL both in the featured grid markup and at the same position in the `images` array so the lightbox opens the right image.
-
-### Other upload scripts
-
-- `npm run upload:og` uploads `og-image.png` and prints its URL. Use it after regenerating the share card, then update the `og:image` and `twitter:image` meta tags in `index.html`.
-- `npm run upload:assets` uploads the share image and favicons.
+To preview locally without uploading, run `npm run media:preview`. It writes the resized files to `.media-build/` and points the manifest at them; run `npm run media:sync` again before committing.

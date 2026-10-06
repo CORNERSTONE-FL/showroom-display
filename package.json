@@ -2,11 +2,13 @@
   "name": "showroom-display",
   "version": "1.0.0",
   "private": true,
-  "description": "Cornerstone Brombal Group showroom site: a static, installable gallery deployed on Vercel.",
+  "description": "Cornerstone Brombal Group showroom site: a static, installable gallery on Vercel, with photos stored in Convex.",
   "scripts": {
-    "upload:images": "node upload-images.mjs",
-    "upload:assets": "node upload-assets.mjs",
-    "upload:og": "node upload-og.mjs"
+    "media:sync": "node scripts/media.mjs sync",
+    "media:preview": "node scripts/media.mjs preview",
+    "convex:dev": "convex dev",
+    "convex:deploy": "convex deploy",
+    "typecheck": "tsc -p convex"
   },
   "repository": {
     "type": "git",
@@ -19,10 +21,15 @@
     "url": "https://github.com/CORNERSTONE-FL/showroom-display/issues"
   },
   "homepage": "https://github.com/CORNERSTONE-FL/showroom-display#readme",
-  "dependencies": {
-    "uploadthing": "^7.7.4"
-  },
   "engines": {
     "node": ">=20.12"
+  },
+  "dependencies": {
+    "convex": "^1.46.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2"
   }
 }
