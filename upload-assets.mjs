@@ -1,9 +1,13 @@
 import { UTApi } from "uploadthing/server";
 import { readFileSync } from "fs";
 
-const utapi = new UTApi({
-  token: "eyJhcGlLZXkiOiJza19saXZlX2E5ZGZhYjZhN2FlMTgyNTg2MDQwODJiMzc5ZjJkMjFhZWY3YmU2Y2EyZjI0M2JlYzg1OWFmOGM5ODFkMGQ3ZDUiLCJhcHBJZCI6ImJ6c2duc3Nya2oiLCJyZWdpb25zIjpbInNlYTEiXX0=",
-});
+const token = process.env.UPLOADTHING_TOKEN;
+if (!token) {
+  console.error("Missing UPLOADTHING_TOKEN. Copy .env.example to .env, add your token, and run with: node --env-file=.env <script>");
+  process.exit(1);
+}
+
+const utapi = new UTApi({ token });
 
 const files = [
   { path: "./og-image.png",     name: "cornerstone-og-image.png",    type: "image/png" },
