@@ -2,9 +2,13 @@ import { UTApi } from "uploadthing/server";
 import { readFileSync, readdirSync } from "fs";
 import { join, extname } from "path";
 
-const utapi = new UTApi({
-  token: "eyJhcGlLZXkiOiJza19saXZlX2E5ZGZhYjZhN2FlMTgyNTg2MDQwODJiMzc5ZjJkMjFhZWY3YmU2Y2EyZjI0M2JlYzg1OWFmOGM5ODFkMGQ3ZDUiLCJhcHBJZCI6ImJ6c2duc3Nya2oiLCJyZWdpb25zIjpbInNlYTEiXX0=",
-});
+if (!process.env.UPLOADTHING_TOKEN) {
+  console.error("Missing UPLOADTHING_TOKEN. Add it to .env and run: node --env-file=.env " + process.argv[1].split("/").pop());
+  process.exit(1);
+}
+
+// UTApi reads UPLOADTHING_TOKEN from the environment.
+const utapi = new UTApi();
 
 const SHOWROOM_DIR = "./NEW SHOWROOM";
 const VALID_EXTS = [".jpg", ".jpeg", ".png", ".webp"];
