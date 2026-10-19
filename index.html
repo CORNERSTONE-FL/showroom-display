@@ -6,7 +6,7 @@
         <title>Brombal Showroom by Cornerstone | West Palm Beach</title>
         <meta
             name="description"
-            content="Cornerstone is South Florida's specialist in luxury impact windows and doors. Visit our West Palm Beach Brombal showroom and see what's possible for your project."
+            content="See Brombal steel, aluminum and wood windows and doors in person at the Brombal Showroom in West Palm Beach. Open by appointment."
         />
         <!-- App identity -->
         <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -32,7 +32,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="Brombal Showroom by Cornerstone | West Palm Beach" />
-        <meta property="og:description" content="Bring your plans to the Brombal showroom in West Palm Beach. Cornerstone's specialists will show you what's possible." />
+        <meta property="og:description" content="See Brombal steel, aluminum and wood windows and doors in person in West Palm Beach. Open by appointment." />
         <meta property="og:image" content="https://showroom.cornerstonecompaniesfl.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -41,7 +41,7 @@
         <link rel="canonical" href="https://showroom.cornerstonecompaniesfl.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brombal Showroom by Cornerstone | West Palm Beach" />
-        <meta name="twitter:description" content="Bring your plans to the Brombal showroom in West Palm Beach. Cornerstone's specialists will show you what's possible." />
+        <meta name="twitter:description" content="See Brombal steel, aluminum and wood windows and doors in person in West Palm Beach. Open by appointment." />
         <meta name="twitter:image" content="https://showroom.cornerstonecompaniesfl.com/og-image.png" />
 
         <script type="application/ld+json">
@@ -394,190 +394,37 @@
             }
 
             /* About */
-            .about {
-                display: grid;
-                grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-                gap: clamp(40px, 7vw, 110px);
-                align-items: start;
-            }
-            .about h2 {
-                font-size: clamp(38px, 5vw, 68px);
-            }
-            .about-text p {
-                max-width: var(--measure);
-            }
-            .about-text .lede {
-                color: var(--ink);
-            }
-            .about-text p:not(.lede) {
-                color: var(--muted);
-            }
-            .facts {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 28px;
-                margin-top: 48px;
-                padding-top: 32px;
-                border-top: 1px solid var(--rule);
-            }
-            .facts dt {
-                font-family: var(--serif);
-                font-size: 30px;
-                line-height: 1.1;
-            }
-            .facts dd {
-                margin-top: 8px;
-                font-size: 16px;
-                line-height: 1.5;
-                color: var(--muted);
-            }
             /* Process */
-            .steps {
-                display: grid;
-                grid-template-columns: repeat(5, minmax(0, 1fr));
-                gap: 0;
-                list-style: none;
-                counter-reset: step;
-                border-top: 1px solid rgba(255, 255, 255, 0.18);
-            }
-            .steps li {
-                counter-increment: step;
-                padding: 28px 24px 0 0;
-            }
-            .steps li::before {
-                content: counter(step);
-                display: block;
-                margin-bottom: 18px;
-                font-family: var(--serif);
-                font-size: 40px;
-                line-height: 1;
-                color: var(--gold);
-            }
-            .steps h3 {
-                font-family: var(--sans);
-                font-size: 15px;
-                font-weight: 600;
-                letter-spacing: 0.04em;
-                margin-bottom: 10px;
-            }
-            .steps p {
-                font-size: 16px;
-                line-height: 1.6;
-                color: rgba(255, 255, 255, 0.88);
-            }
-            .process-photo {
-                margin-top: clamp(56px, 7vw, 88px);
-                display: grid;
-                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-                gap: 8px;
-            }
-            .process-photo img {
-                width: 100%;
-                height: clamp(260px, 32vw, 460px);
-                object-fit: cover;
-            }
 
             /* Brombal */
-            .brombal-intro {
-                display: grid;
-                grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-                gap: clamp(40px, 7vw, 110px);
-                margin-bottom: clamp(52px, 7vw, 88px);
-            }
-            .brombal-intro p {
-                max-width: var(--measure);
-                color: var(--muted);
-            }
-            .brombal-intro .lede {
-                color: var(--ink);
+            .inside h2 {
+                margin-bottom: clamp(32px, 4vw, 52px);
             }
             .lines {
                 display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: clamp(20px, 3vw, 40px);
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: clamp(12px, 2vw, 28px);
             }
             .line img {
                 width: 100%;
                 aspect-ratio: 4 / 5;
                 object-fit: cover;
-                margin-bottom: 22px;
+                margin-bottom: 16px;
+            }
+            .line figcaption {
+                font-family: var(--serif);
+                font-size: clamp(22px, 2vw, 28px);
+                line-height: 1.15;
             }
             .line-material {
+                display: block;
+                margin-bottom: 4px;
+                font-family: var(--sans);
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: 0.16em;
                 text-transform: uppercase;
                 color: var(--gold-ink);
-            }
-            .line h3 {
-                margin: 6px 0 10px;
-            }
-            .line p {
-                font-size: 16px;
-                color: var(--muted);
-            }
-            .glass-note {
-                margin-top: 40px;
-                padding-top: 24px;
-                border-top: 1px solid var(--rule);
-                font-size: 15px;
-                color: var(--muted);
-            }
-            .disclaimer {
-                display: block;
-                margin-top: 6px;
-            }
-
-            /* Showroom */
-            .showroom {
-                background: var(--stone);
-            }
-            .showroom-grid {
-                display: grid;
-                grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-                gap: clamp(36px, 6vw, 88px);
-                align-items: start;
-            }
-            .showroom-grid > img {
-                width: 100%;
-                height: 100%;
-                min-height: 420px;
-                object-fit: cover;
-            }
-            .showroom-list {
-                list-style: none;
-                margin-top: 32px;
-            }
-            .showroom-list li {
-                padding: 18px 0;
-                border-top: 1px solid var(--rule);
-                font-size: 17px;
-                color: var(--muted);
-            }
-            .showroom-list li:last-child {
-                border-bottom: 1px solid var(--rule);
-            }
-            .showroom-list strong {
-                display: block;
-                margin-bottom: 4px;
-                font-weight: 600;
-                color: var(--ink);
-            }
-            .details-row {
-                display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: 8px;
-                margin-top: clamp(40px, 6vw, 72px);
-            }
-            .details-row figure img {
-                width: 100%;
-                aspect-ratio: 1;
-                object-fit: cover;
-            }
-            .details-row figcaption {
-                margin-top: 10px;
-                font-size: 13px;
-                color: var(--muted);
             }
 
             /* Gallery */
@@ -836,10 +683,6 @@
                 .nav-phone {
                     display: none;
                 }
-                .steps {
-                    grid-template-columns: repeat(3, minmax(0, 1fr));
-                    row-gap: 36px;
-                }
             }
             @media (max-width: 980px) {
                 .nav-links {
@@ -848,18 +691,12 @@
                 .nav .btn {
                     margin-left: auto;
                 }
-                .about,
-                .brombal-intro,
-                .showroom-grid,
                 .visit,
                 .section-head {
                     grid-template-columns: minmax(0, 1fr);
                 }
                 .gallery-grid {
                     grid-template-columns: repeat(3, minmax(0, 1fr));
-                }
-                .details-row {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
                 }
                 .visit > img {
                     aspect-ratio: 16 / 10;
@@ -921,41 +758,9 @@
                 .hero-actions .btn {
                     flex: 1 1 100%;
                 }
-                .facts {
-                    grid-template-columns: minmax(0, 1fr);
-                    gap: 20px;
-                }
-                .steps {
-                    grid-template-columns: minmax(0, 1fr);
-                    row-gap: 0;
-                }
-                .steps li {
-                    display: grid;
-                    grid-template-columns: 44px minmax(0, 1fr);
-                    padding: 22px 0;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-                }
-                .steps li::before {
-                    grid-row: span 2;
-                    margin: 0;
-                    font-size: 32px;
-                }
-                .process-photo {
-                    grid-template-columns: minmax(0, 1fr);
-                }
-                .process-photo img:last-child {
-                    display: none;
-                }
                 .lines {
-                    grid-template-columns: minmax(0, 1fr);
-                    gap: 44px;
-                }
-                .line img {
-                    aspect-ratio: 4 / 3;
-                }
-                .showroom-grid > img {
-                    min-height: 0;
-                    aspect-ratio: 4 / 3;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    row-gap: 28px;
                 }
                 .gallery-grid {
                     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1016,15 +821,12 @@
                 <span class="brand-name">Cornerstone</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">About us</a></li>
-                <li><a href="#process">How we work</a></li>
-                <li><a href="#brombal">Brombal</a></li>
-                <li><a href="#showroom">Showroom</a></li>
+                <li><a href="#inside">Inside</a></li>
                 <li><a href="#gallery">Photos</a></li>
                 <li><a href="#visit">Visit</a></li>
             </ul>
             <a class="nav-phone" href="tel:+15617170474">561.717.0474</a>
-            <a class="btn btn-gold" href="#visit">Schedule a visit</a>
+            <a class="btn btn-gold" href="#visit">Book a visit</a>
         </nav>
 
         <header class="hero" id="top">
@@ -1038,168 +840,36 @@
                 fetchpriority="high"
             />
             <div class="hero-copy">
-                <span class="kicker">Brombal Showroom &middot; West Palm Beach</span>
-                <h1>Bring us your vision. We'll show you what's possible.</h1>
-                <p>
-                    Cornerstone is South Florida's specialist in luxury impact windows and doors. For architects, builders and homeowners, we're the
-                    team that knows these systems inside and out and helps every opening come out better than the drawing.
-                </p>
+                <span class="kicker">Cornerstone &middot; West Palm Beach</span>
+                <h1>The Brombal Showroom</h1>
+                <p>Full-size Brombal windows and doors in steel, aluminum and wood, set up so you can open, close and compare them. Open by appointment.</p>
                 <div class="hero-actions">
-                    <a class="btn btn-gold" href="#visit">Schedule a visit</a>
+                    <a class="btn btn-gold" href="#visit">Book a visit</a>
                     <a class="btn btn-outline" href="tel:+15617170474">Call 561.717.0474</a>
                 </div>
             </div>
         </header>
 
         <main id="main">
-            <section class="about" id="about" aria-labelledby="about-title">
-                <div>
-                    <span class="kicker">Why Cornerstone</span>
-                    <h2 id="about-title">Window and door experts, here to make your project better.</h2>
-                </div>
-                <div class="about-text">
-                    <p class="lede">
-                        Every home, every design and every client comes with different needs. Our job is to know the products well enough to tell you what
-                        will work, what will work better, and what you may not have known was possible.
-                    </p>
-                    <p>
-                        Since 2017 we've partnered with the architects and builders behind some of South Florida's most ambitious homes. We handle the
-                        work in-house, from the first bid and shop drawings through installation and service, so the people giving you advice are the
-                        same people delivering the job.
-                    </p>
-                    <p>
-                        We represent four world-class manufacturers: Brombal, ES Windows, Kolbe and Oikos. That lets us recommend what's right for each
-                        opening instead of pushing a single product line.
-                    </p>
-                    <dl class="facts">
-                        <div>
-                            <dt>Since 2017</dt>
-                            <dd>Family-owned and led, based in West Palm Beach</dd>
-                        </div>
-                        <div>
-                            <dt>4 partners</dt>
-                            <dd>Brombal, ES Windows, Kolbe and Oikos</dd>
-                        </div>
-                        <div>
-                            <dt>Start to finish</dt>
-                            <dd>Bids, CAD drawings, project management, installation and service</dd>
-                        </div>
-                    </dl>
-                </div>
-            </section>
-
-            <section class="process on-dark" id="process" aria-labelledby="process-title">
-                <div class="section-head">
-                    <div>
-                        <span class="kicker">How we work</span>
-                        <h2 id="process-title">Hands-on from the first bid to the final punch list.</h2>
-                    </div>
-                    <p>
-                        Our approach is collaborative, flexible and hands-on. These systems are made to order overseas, and we make sure every one of
-                        them is detailed, installed and adjusted to perform in South Florida.
-                    </p>
-                </div>
-                <ol class="steps">
-                    <li>
-                        <h3>Bid</h3>
-                        <p>Send us your architectural and structural plans. We come back with a full bid and options for each opening.</p>
-                    </li>
-                    <li>
-                        <h3>Shop drawings</h3>
-                        <p>Our CAD team draws every opening. Once the drawings are signed and the deposit is in, the factory starts production.</p>
-                    </li>
-                    <li>
-                        <h3>Site prep</h3>
-                        <p>We check floor heights and openings on site, then buck and waterproof each opening ourselves.</p>
-                    </li>
-                    <li>
-                        <h3>Installation</h3>
-                        <p>Our crews install to the manufacturer's specs and walk every opening with the builder before sign-off.</p>
-                    </li>
-                    <li>
-                        <h3>Close-out</h3>
-                        <p>We make the final adjustments, chase down any missing parts and finish the punch list. Our service team is here after that.</p>
-                    </li>
-                </ol>
-                <div class="process-photo">
-                    <img data-media="studio" sizes="(max-width: 700px) 100vw, 66vw" loading="lazy" alt="" />
-                    <img data-media="finish-wall" sizes="33vw" loading="lazy" alt="" />
-                </div>
-            </section>
-
-            <section class="brombal" id="brombal" aria-labelledby="brombal-title">
-                <div class="brombal-intro">
-                    <div>
-                        <span class="kicker">The Brombal Group</span>
-                        <h2 id="brombal-title">Italian craftsmanship in steel, aluminum and wood.</h2>
-                    </div>
-                    <div>
-                        <p class="lede">
-                            Brombal is a family-run Italian manufacturer known around the world for slim steel windows and doors. Pietro Brombal opened his
-                            first metal shop in 1970, and today the Brombal Group builds systems in three materials.
-                        </p>
-                        <p>
-                            Cornerstone is the Brombal distributor for South Florida. We help you choose the right line for each opening, work out the
-                            details with your architect and builder, and install it with our own crews. All three lines are set up in our showroom.
-                        </p>
-                    </div>
-                </div>
+            <section class="inside" id="inside" aria-labelledby="inside-title">
+                <span class="kicker">Inside</span>
+                <h2 id="inside-title">What's on the floor</h2>
                 <div class="lines">
-                    <article class="line">
-                        <img data-media="brombal-wall" sizes="(max-width: 700px) 100vw, 33vw" loading="lazy" alt="" />
-                        <span class="line-material">Steel</span>
-                        <h3>Brombal</h3>
-                        <p>Slim steel profiles for windows, French doors and full-height glass walls. The line Brombal is best known for.</p>
-                    </article>
-                    <article class="line">
-                        <img data-media="viewscapes" sizes="(max-width: 700px) 100vw, 33vw" loading="lazy" alt="" />
-                        <span class="line-material">Aluminum</span>
-                        <h3>ViewScapes</h3>
-                        <p>Minimal-frame aluminum systems, including Lumina, for large openings and clean, modern lines.</p>
-                    </article>
-                    <article class="line">
-                        <img data-media="wood-corner" sizes="(max-width: 700px) 100vw, 33vw" loading="lazy" alt="" />
-                        <span class="line-material">Wood</span>
-                        <h3>eWood</h3>
-                        <p>Wood windows and doors built by Impronta, for warmth with the same precise detailing.</p>
-                    </article>
-                </div>
-                <p class="glass-note">
-                    <span class="disclaimer">Brombal, ViewScapes and eWood are brands of the Brombal Group. Cornerstone is an independent distributor and installer.</span>
-                </p>
-            </section>
-
-            <section class="showroom" id="showroom" aria-labelledby="showroom-title">
-                <div class="showroom-grid">
-                    <img data-media="floor-long" sizes="(max-width: 980px) 100vw, 58vw" loading="lazy" alt="" />
-                    <div>
-                        <span class="kicker">The showroom</span>
-                        <h2 id="showroom-title">See what's possible before you build.</h2>
-                        <ul class="showroom-list">
-                            <li><strong>Try the real thing.</strong>Swing, slide and pivot doors on the floor are working units you can open and close.</li>
-                            <li><strong>Compare the three materials.</strong>Steel, aluminum and wood sit side by side in the same light.</li>
-                            <li><strong>Handle the hardware.</strong>Handle sets, hinges and the hand-wheel window operator are all there to try.</li>
-                            <li><strong>Choose finishes in person.</strong>Real metal and wood samples, not a printed color chart.</li>
-                            <li><strong>Bring your plans.</strong>Sit down with our team, go through each opening and leave with ideas you didn't walk in with.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="details-row">
-                    <figure>
-                        <img data-media="hand-wheel" sizes="(max-width: 980px) 50vw, 25vw" loading="lazy" alt="" />
-                        <figcaption></figcaption>
+                    <figure class="line">
+                        <img data-media="brombal-wall" sizes="(max-width: 700px) 50vw, 25vw" loading="lazy" alt="" />
+                        <figcaption><span class="line-material">Steel</span>Brombal</figcaption>
                     </figure>
-                    <figure>
-                        <img data-media="finish-chips" sizes="(max-width: 980px) 50vw, 25vw" loading="lazy" alt="" />
-                        <figcaption></figcaption>
+                    <figure class="line">
+                        <img data-media="viewscapes" sizes="(max-width: 700px) 50vw, 25vw" loading="lazy" alt="" />
+                        <figcaption><span class="line-material">Aluminum</span>ViewScapes</figcaption>
                     </figure>
-                    <figure>
-                        <img data-media="hardware-board" sizes="(max-width: 980px) 50vw, 25vw" loading="lazy" alt="" />
-                        <figcaption></figcaption>
+                    <figure class="line">
+                        <img data-media="wood-corner" sizes="(max-width: 700px) 50vw, 25vw" loading="lazy" alt="" />
+                        <figcaption><span class="line-material">Wood</span>eWood</figcaption>
                     </figure>
-                    <figure>
-                        <img data-media="wood-section" sizes="(max-width: 980px) 50vw, 25vw" loading="lazy" alt="" />
-                        <figcaption></figcaption>
+                    <figure class="line">
+                        <img data-media="hardware-board" sizes="(max-width: 700px) 50vw, 25vw" loading="lazy" alt="" />
+                        <figcaption><span class="line-material">Details</span>Finishes and hardware</figcaption>
                     </figure>
                 </div>
             </section>
@@ -1208,7 +878,7 @@
                 <div class="section-head">
                     <div>
                         <span class="kicker">Photos</span>
-                        <h2 id="gallery-title">Inside the showroom</h2>
+                        <h2 id="gallery-title">Take a look around</h2>
                     </div>
                     <p>Tap any photo to see it larger.</p>
                 </div>
@@ -1223,11 +893,8 @@
                 <img data-media="courtyard" sizes="(max-width: 980px) 100vw, 50vw" loading="lazy" alt="" />
                 <div class="visit-copy">
                     <span class="kicker">Visit</span>
-                    <h2 id="visit-title">Let's talk about your project.</h2>
-                    <p>
-                        Bring your plans, or just your ideas. The showroom is open by appointment so one of our specialists can walk you through it and
-                        talk through what you're building.
-                    </p>
+                    <h2 id="visit-title">Visit the showroom</h2>
+                    <p>Open by appointment. Bring your plans and someone from our team will walk you through it.</p>
                     <dl class="visit-facts">
                         <div>
                             <dt>Showroom</dt>
@@ -1242,7 +909,6 @@
                             <dt>Appointments</dt>
                             <dd>
                                 <a href="tel:+15617170474">561.717.0474</a>
-                                <small>Homeowners, architects, designers and builders welcome.</small>
                             </dd>
                         </div>
                     </dl>
@@ -1267,7 +933,7 @@
                     </svg>
                     <span class="brand-name">Cornerstone</span>
                 </a>
-                <p>Cornerstone Companies &middot; Family-owned since 2017<br />418 25th Street, West Palm Beach, FL 33407 &middot; CGC1539842</p>
+                <p>The Brombal Showroom is run by Cornerstone, the Brombal distributor for South Florida.<br />418 25th Street, West Palm Beach, FL 33407 &middot; CGC1539842</p>
             </div>
             <div class="footer-right">
                 <p>
@@ -1318,7 +984,7 @@
                 const item = mediaById.get(img.dataset.media);
                 fillImage(img, item);
                 const caption = img.closest("figure")?.querySelector("figcaption");
-                if (caption && item) caption.textContent = item.caption;
+                if (caption && item && !caption.textContent.trim()) caption.textContent = item.caption;
             });
 
             // ── Gallery ──
