@@ -1,5 +1,5 @@
-const SHELL_CACHE = "cornerstone-showroom-shell-v6";
-const RUNTIME_CACHE = "cornerstone-showroom-runtime-v6";
+const SHELL_CACHE = "cornerstone-showroom-shell-v7";
+const RUNTIME_CACHE = "cornerstone-showroom-runtime-v7";
 const APP_SHELL = [
     "./",
     "./index.html",
